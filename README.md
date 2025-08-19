@@ -1,43 +1,52 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# NovekTech Digital Menu Platform
 
-Currently, two official plugins are available:
+This project is a modern, scalable digital menu platform for restaurants, built with React, TypeScript, Vite, and Shadcn UI. It supports multiple restaurants, a beautiful public menu for each, and a secure admin dashboard for restaurant owners.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Multi-restaurant support (e.g. `/melani`, `/cocoa`, ...)
+- Digital menu for each restaurant
+- Centralized admin dashboard (`/admin`) for restaurant management
+- Modern UI with Shadcn components (Dashboard 01, sidebar, cards, etc.)
+- Ready for monorepo structure (frontend, backend, shared)
+- Scalable and secure authentication (BetterAuth recommended)
 
-## Expanding the ESLint configuration
+## Getting Started
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+3. Visit:
+   - Home: `http://localhost:5173/`
+   - Melani menu: `/melani`
+   - Admin dashboard: `/admin`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Folder Structure
 ```
+src/
+  Home.tsx           # Home page
+  admin/
+    Dashboard.tsx    # Admin dashboard
+  restaurants/
+    Melani.tsx       # Melani restaurant menu
+    ...              # Other restaurants
+  components/ui/     # Shadcn UI components
+```
+
+## Deployment
+- Frontend: Vercel, Netlify, or cPanel (upload build output)
+- Backend: Node.js (Express/Fastify/NestJS) or FastAPI (deploy separately)
+- Monorepo recommended for scalability
+
+## Authentication
+- Use BetterAuth or similar for secure, scalable login and role management
+
+## License
+MIT
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
